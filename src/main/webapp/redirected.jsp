@@ -22,7 +22,8 @@
     Mójj parametr to: <%=request.getParameter("myParam")%>
 </p>
 <p>
-    5<sup>2</sup>wynosi:
+    <jsp:getProperty name="calculator" property="n"/>
+    <sup>2</sup>wynosi:
     <%
 
     int result = calculator.square();

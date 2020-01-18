@@ -17,6 +17,10 @@
     Object userId = session.getAttribute("userId");
 
 %>
+<p>Id: <%= session.getId()%></p>
+<p>Creation time: <%= new Date(session.getCreationTime())%></p>
+<p> Last access time: <%= new Date(session.getLastAccessedTime())%>
+</p>
 
 
 <p>UserId: <% out.print(userId); %></p>

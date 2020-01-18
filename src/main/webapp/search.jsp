@@ -1,4 +1,5 @@
-<%--
+<%@ page import="javafx.scene.control.skin.CellSkinBase" %>
+<%@ page import="javax.swing.*" %><%--
   Created by IntelliJ IDEA.
   User: adamo
   Date: 18.01.2020
@@ -11,27 +12,23 @@
     <title>Wynik wyszukiwania</title>
 </head>
 <body>
-<p>
-    Szukane słowo: <%=request.getParameter("query")%></p>
-<p>
-    Strona: <%=request.getParameter("page")%></p>
-<p>Sortowanie:
-<%--    <%=("desc".equals(request.getParameter("sort")) ?"malejąco":"rosnąco")%></p> --%>
+<h2>Obsługa Cookie</h2>
+
 <%
-    switch (request.getParameter("sort")){
-        case "asc":
-            out.print("rosnąco");
-            break;
-            case "desc":
-                out.print("malejąco");
-                break;
-                default:
+    Cookie[] coockies = request.getCookies();
+    if (coockies  !=null) {
+        out.println("<h2>Found Cookie</h2>");
+        for (Cookie cookie : coockies) {
 
-                    out.print("Niezdefiniowane sortowanie");
+            out.print("Name" + cookie.getName() + ",");
+            out.print("Value" + cookie.getValue() + "</br>");
 
-    };
-    %>
+        }
 
+    }else{
+        out.print("<h2>No cookies found</h2>");
+    }
+%>
 
 </body>
 </html>

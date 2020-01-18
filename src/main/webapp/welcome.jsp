@@ -16,5 +16,7 @@
     </label>
     <input type="submit" value="wyślij"/>
 </form>
+
+<a href="search.jsp?query=JAVA&page=3&sort=desc">Kliknij mnie</a>
 </body>
 </html>
